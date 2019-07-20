@@ -232,7 +232,7 @@ var requirejs, require, define;
 
     /**
      * Makes a name map, normalizing the name, and using a plugin
-     * for normalization if necessary. Grabs a ref to plugin
+     * for normalization if necessary. Grabs a himeji to plugin
      * too, as an optimization.
      */
     makeMap = function (name, relName) {

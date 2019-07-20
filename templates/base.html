@@ -1,68 +1,60 @@
-<!DOCTYPE html>
 <html>
+<head>
+    <meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Himeji</title>
+	<meta name="keywords" content="informatique entraide astuces" />
+    {% load static %}
+    <link rel="stylesheet" href="{% static "/style.css" %}">
+	<link rel="stylesheet" href="{% static "/normalize.css" %}" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway:500&display=swap" rel="stylesheet">
+    <script src="{% static "/modernizr.js" %}"></script>
+</head>
 
-    <head>
-        <title>Himeji</title>
-        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
-        <meta name="google" content="notranslate" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-            crossorigin="anonymous" />
-    </head>
+<body>
 
-    <body>
-        <style>
-            body {
-            font-family: "Roboto", sans-serif;
-            font-size: 17px;
-            background-color: #fdfdfd;
-        }
-        .shadow {
-            box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.1);
-        }
-        .btn-danger {
-            color: #fff;
-            background-color: #f00000;
-            border-color: #dc281e;
-        }
-        .masthead {
-            background: #3398E1;
-            height: auto;
-            padding-bottom: 15px;
-            box-shadow: 0 16px 48px #E3E7EB;
-            padding-top: 10px;
-        }
-    </style>
+<div class="grid-container">
+  <div class="header">
+<button data-effect="st-effect-1">Slide</button>
+<h1 class="title"><a href="{% url 'home' %}">Himeji</a></h1>
 
-        <!-- Navigation -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light shadow" id="mainNav">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="{% url 'home' %}">Himeji</a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item text-black">
-                            <a class="nav-link text-black font-weight-bold" href="#">About</a>
-                        </li>
-                        <li class="nav-item text-black">
-                            <a class="nav-link text-black font-weight-bold" href="#">Policy</a>
-                        </li>
-                        <li class="nav-item text-black">
-                            <a class="nav-link text-black font-weight-bold" href="#">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        {% block content %}
+</div>
+<div id="st-container" class="st-container sidebar">
+
+<nav class="st-menu st-effect-1" id="menu-1">
+    <h2 class="icon icon-lab"></h2>
+    <ul>
+      <li><a href="">News</a></li>
+      <li><a href="#">Connaissances</a></li>
+      <li><a href="#">Forum</a></li>
+      <li><a href="#">CV</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+</div>
+<div class="content">
+              {% block content %}
         <!-- Content Goes here -->
         {% endblock content %}
-        <!-- Footer -->
-        <footer class="py-3 bg-grey">
-            <p class="m-0 text-dark text-center ">Copyright &copy; Paul Zurita</p>
-        </footer>
-    </body>
+</div>
+</div>
+<footer></footer>
+
+</body>
+<script type="text/javascript">
+var click = document.querySelectorAll('div button');
+var menu = document.querySelector('#st-container');
+var effect;
+// adding a click event to all the buttons
+for (var i = 0; i < click.length; i++) {
+  click[i].addEventListener('click', addClass) }
+function addClass(e) {
+  effect = e.target.getAttribute('data-effect');
+  menu.classList.toggle(effect);
+  menu.classList.toggle('st-menu-open'); }
+
+
+</script>
 </html>
+
+

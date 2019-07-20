@@ -1,7 +1,5 @@
 from django.db import models
 
-# Un modèle est une classe qui représente une table ou une collection dans notre base de données, et où tous les
-# attributs d'une classe est un champ de cette table ou collection.
 
 STATUS = (
     (0,"Draft"),
@@ -22,3 +20,4 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
