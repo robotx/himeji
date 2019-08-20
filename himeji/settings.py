@@ -26,7 +26,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'website.apps.WebsiteConfig',
-    'himeji'
+    'himeji',
 ]
 
 MIDDLEWARE = [
@@ -111,3 +111,10 @@ STATICFILES_DIRS = (os.path.join(STATIC_ROOT, 'css/'),
                     os.path.join(STATIC_ROOT, 'js/'),
                     os.path.join(STATIC_ROOT, 'img/')
                    )
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+DEFAULT_FROM_EMAIL = 'testing@example.com'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+EMAIL_USE_TLS = False
+EMAIL_PORT = 1025
