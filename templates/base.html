@@ -1,3 +1,4 @@
+{% load i18n %} {% language 'fr' %}
 <html>
 <head>
     <meta charset="utf-8"/>
@@ -14,21 +15,22 @@
 <body>
 
 <div class="grid-container">
-  <div class="header">
-<button data-effect="st-effect-1">Slide</button>
-<h1 class="title"><a href="{% url 'home' %}">Himeji</a></h1>
+    <div class="header">
+        <button data-effect="st-effect-1">Slide</button>
+        <h1 class="title"><a href="{% url 'home' %}">Himeji</a></h1>
+        <a style="float:right">fr</a>
+    </div>
 
-</div>
-<div id="st-container" class="st-container sidebar">
+    <div id="st-container" class="st-container sidebar">
 
 <nav class="st-menu st-effect-1" id="menu-1">
     <h2 class="icon icon-lab"></h2>
     <ul>
-      <li><a href="">News</a></li>
-      <li><a href="#">Connaissances</a></li>
+      <li><a href="{%  url 'news' %}">News</a></li>
+      <li><a href="{%  url 'knowledge' %}">Savoir</a></li>
       <li><a href="#">Forum</a></li>
       <li><a href="#">CV</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><a href="{%  url 'contact' %}">Contact</a></li>
     </ul>
   </nav>
 </div>
@@ -58,3 +60,4 @@ function addClass(e) {
 </html>
 
 
+{% endlanguage %}

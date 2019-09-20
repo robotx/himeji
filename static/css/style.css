@@ -59,7 +59,8 @@ a {
 	position: absolute;
 	top: 0;
 	right: 0;
-	width: 100%;
+	min-width:150%!important;
+	width: 150%;
 	height: 100%;
 	background: rgba(0,0,0,0.2);
 	content: '';
@@ -67,6 +68,7 @@ a {
 	-webkit-transition: opacity 0.5s;
 	transition: opacity 0.5s;
 }
+
 .st-container {
 	position: relative;
 	height: auto;
@@ -186,5 +188,66 @@ footer {background-color:black;height:10%;width:100%;bottom:0;}
 }
 
 .card {
-	background-color: grey;border-radius: 5px;padding:10px;margin-top:20px;
+	background-color: grey;border-radius: 5px;padding-bottom:5px;margin-top:20px;
 }
+
+.card-header {
+	background-color: #343434;color:white;
+}
+
+.card-date {
+	display:inline-block;font-size:0.8em;color:white;text-align: right;
+}
+
+aside {
+    display: block;
+    position: relative;
+   }
+
+aside h4 {
+     font: bold 12px Sans-Serif;
+     letter-spacing: 2px;
+     text-transform: uppercase;
+     color: #fff;
+     padding: 5px 10px;
+     margin: 0 0 10px 0;
+     line-height: 24px;
+    }
+
+	.csstransforms .cat-knowledge {
+		border-left-color: #ffd001;
+	}
+
+	.csstransforms .cat-news {
+		border-left-color: #369;
+	}
+
+    /* Class name via Modernizr */
+    .csstransforms aside {
+        border-left: 34px solid;
+        padding-left: 10px;
+    }
+
+
+
+    .csstransforms aside h4 {
+
+        /* Abs positioning makes it not take up vert space */
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        /* Border is the new background */
+        background: none;
+
+        /* Rotate from top left corner (not default) */
+        -webkit-transform-origin: 0 0;
+        -moz-transform-origin:    0 0;
+        -ms-transform-origin:     0 0;
+        -o-transform-origin:      0 0;
+
+        -webkit-transform: rotate(90deg);
+        -moz-transform:    rotate(90deg);
+        -ms-transform:     rotate(90deg);
+        -o-transform:      rotate(90deg);
+    }

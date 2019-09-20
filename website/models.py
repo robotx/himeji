@@ -1,9 +1,14 @@
 from django.db import models
-
+from django.urls import reverse
 
 STATUS = (
-    (0,"Draft"),
-    (1,"Publish")
+    (0, "Draft"),
+    (1, "Publish")
+)
+
+CAT = (
+    ("News", "News"),
+    ("Savoir", "Savoir")
 )
 
 
@@ -14,6 +19,7 @@ class Post(models.Model):
     created_on = models.DateTimeField(auto_now_add=True, blank=True)
     updated_on = models.DateTimeField(auto_now=True)
     status = models.IntegerField(choices=STATUS, default=0)
+    category = models.CharField(max_length=255, choices=CAT, default=0)
 
     class Meta:
         ordering = ['-created_on']
