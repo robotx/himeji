@@ -9,16 +9,23 @@
     <link rel="stylesheet" href="{% static "/style.css" %}">
 	<link rel="stylesheet" href="{% static "/normalize.css" %}" />
     <link href="https://fonts.googleapis.com/css?family=Raleway:500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/77e6939f3a.js"></script>
     <script src="{% static "/modernizr.js" %}"></script>
 </head>
 
 <body>
 
 <div class="grid-container">
+
     <div class="header">
-        <button data-effect="st-effect-1">Slide</button>
-        <h1 class="title"><a href="{% url 'home' %}">Himeji</a></h1>
-        <a style="float:right">fr</a>
+        <div class="header-line-left">
+            <button style="float:left;height:100%;" data-effect="st-effect-1"><i class="fas fa-bars"></i></button>
+
+            <h1 class="title"><a href="{% url 'website:home' %}">Himeji</a></h1>
+        </div>
+        <div class="header-line-right">
+            <a>fr</a>
+        </div>
     </div>
 
     <div id="st-container" class="st-container sidebar">
@@ -26,19 +33,19 @@
 <nav class="st-menu st-effect-1" id="menu-1">
     <h2 class="icon icon-lab"></h2>
     <ul>
-      <li><a href="{%  url 'news' %}">News</a></li>
-      <li><a href="{%  url 'knowledge' %}">Savoir</a></li>
-      <li><a href="#">Forum</a></li>
-      <li><a href="#">CV</a></li>
-      <li><a href="{%  url 'contact' %}">Contact</a></li>
+      <li><a href="{%  url 'website:news' %}"><i class="fas fa-ad"></i> News</a></li>
+      <li><a href="{%  url 'website:knowledge' %}"><i class="fas fa-ad"></i> Savoir</a></li>
+      <li><a href="{% url 'forum:forum' %}"><i class="fas fa-ad"></i> Forum</a></li>
+      <li><a href="#"><i class="fas fa-ad"></i> CV</a></li>
+      <li><a href="{%  url 'website:contact' %}"><i class="fas fa-ad"></i> Contact&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
     </ul>
   </nav>
 </div>
-<div class="content">
+
               {% block content %}
         <!-- Content Goes here -->
         {% endblock content %}
-</div>
+
 </div>
 <footer></footer>
 
@@ -46,6 +53,7 @@
 <script type="text/javascript">
 var click = document.querySelectorAll('div button');
 var menu = document.querySelector('#st-container');
+var content = document.querySelector('.content');
 var effect;
 // adding a click event to all the buttons
 for (var i = 0; i < click.length; i++) {
@@ -53,9 +61,10 @@ for (var i = 0; i < click.length; i++) {
 function addClass(e) {
   effect = e.target.getAttribute('data-effect');
   menu.classList.toggle(effect);
-  menu.classList.toggle('st-menu-open'); }
-
-
+  menu.classList.toggle('st-menu-open');
+  content.classList.toggle(effect);
+  content.classList.toggle('st-menu-open-push');
+}
 </script>
 </html>
 

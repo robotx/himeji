@@ -1,0 +1,31 @@
+<!DO{% extends "base.html" %}
+{% block content %}
+    <div style="background-color:inherit" class="content">
+    <h1>Espace de discussion</h1>
+        <div class="forum-layout-post-main">
+
+
+            {% for post in post2_list %}
+            <div style="border-left-color: #289bca;" class="forum-layout-post" >
+               <div class="card-forum">
+                    &nbsp;<div class="avatar"></div><div class="post-title">{{ post.title }}</div>
+               </div></div>
+            {% endfor %}
+
+
+{% if is_paginated %}
+  <ul>
+    {% if page_obj.has_previous %}
+    <a href="?page={{ page_obj.previous_page_number }}" class="page-link"><button>&laquo; PREV </button></a>
+    {% endif %}
+    {% if page_obj.has_next %}
+   <a href="?page={{ page_obj.next_page_number }}" class="page-link"><button> NEXT &raquo;</button></a>
+
+    {% endif %}
+  </ul>
+
+{% endif %}
+
+    </div>
+  </div>
+{%endblock%}

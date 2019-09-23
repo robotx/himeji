@@ -21,6 +21,7 @@ a {
 
 .title {
 	color:white;
+	left:10px;
 }
 
 .grid-container * { 
@@ -36,13 +37,15 @@ a {
 
 .grid-container {
   display: grid;
-  grid-template-columns: 0.4fr 0.8fr 2fr 0.8fr;
+  grid-template-columns: 0.4fr 0fr 2fr 0.4fr;
   grid-template-rows: 0.2fr 2.2fr 0.4fr;
-  grid-template-areas: "header header header header" 
-		       "sidebar . content ." 
+  grid-template-areas: "header header header header"
+		       "sidebar . content ."
 		       "sidebar footer footer footer";
 }
+
 .test {padding-bottom:10%;}
+
 .st-menu {
 	position: absolute;
 	top: 0;
@@ -113,7 +116,6 @@ a {
 	color: #fff;
 }
 
-
 .st-menu-open .st-menu::after {
 	width: 0;
 	height: 0; 
@@ -122,16 +124,32 @@ a {
 	transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
 }
 
+.st-menu-open-push .content::after {
+
+	transform:translate3d(260px, 0, 0);
+}
+
 .st-effect-1.st-menu {
 	visibility: visible;
 	-webkit-transform: translate3d(-100%, 0, 0);
 	transform: translate3d(-100%, 0, 0);
 }
 
+.st-effect-1.content {
+	visibility: visible;
+	-webkit-transform: translate3d(260px, 0, 0);
+	transform: translate3d(260px, 0, 0);
+}
+
 .st-effect-1.st-menu-open .st-effect-1.st-menu {
 	visibility: visible;
 	-webkit-transform: translate3d(0, 0, 0);
 	transform: translate3d(0, 0, 0);
+}
+
+.st-effect-1.st-menu-open-push .st-effect-1.content {
+	visibility: visible;
+	transform: translate3d(260px, 0, 0);
 }
 
 .st-effect-1.st-menu::after {
@@ -142,12 +160,12 @@ a {
 
 .sidebar { grid-area: sidebar;overflow: visible;}
 
-.content { grid-area: content;background-color:rgba(200,200,200,100);margin-top:15px;margin-bottom:15px;border-radius:10px;}
+.content { grid-area: content;background-color:rgba(200,200,200,100);margin-top:15px;margin-bottom:15px;border-radius:10px;transition:all 0.5s ;}
 
 button {
 	border: none;
 	padding: 0.6em 1.2em;
-	background: #388a5a;
+	background: #289bca;
 	color: #fff;
 	font-family: 'Lato', Calibri, Arial, sans-serif;
 	font-size: 1em;
@@ -160,7 +178,7 @@ button {
 }
 
 button:hover {
-	background: #2c774b;
+	background: #2593bf;
 }
 
 nav a {
@@ -188,7 +206,7 @@ footer {background-color:black;height:10%;width:100%;bottom:0;}
 }
 
 .card {
-	background-color: grey;border-radius: 5px;padding-bottom:5px;margin-top:20px;
+	background-color: grey;border-radius: 5px;padding-bottom:5px;margin-top:20px;height:fit-content;
 }
 
 .card-header {
@@ -228,8 +246,6 @@ aside h4 {
         padding-left: 10px;
     }
 
-
-
     .csstransforms aside h4 {
 
         /* Abs positioning makes it not take up vert space */
@@ -251,3 +267,42 @@ aside h4 {
         -ms-transform:     rotate(90deg);
         -o-transform:      rotate(90deg);
     }
+
+.header-line-left { width:90%;display:inline-block;}
+
+.header-line-right { width:10%;display:inline-block;float:right;}
+
+
+/* forum ------------------------------------------------------------- */
+
+.forum-layout-post-main {
+	margin:20px;
+	border:1px solid #cacaca;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom: 0;
+}
+
+.forum-layout-post {
+	border-left: 9px solid;
+	border-bottom: 1px solid #cacaca;
+}
+
+.card-forum {
+	padding-bottom:5px;padding-top:10px;height:fit-content;
+}
+
+.avatar {
+	height: 50px;
+	width: 50px;
+	background-color: #e2c825;
+	display:inline-block;
+	margin-left: 5px;
+}
+
+.post-title {
+	bottom:30px;
+	left:1%;
+	display:inline-block;
+	font-size: 1.5em;
+}

@@ -1,5 +1,7 @@
 <!DO{% extends "base.html" %}
 {% block content %}
+<div class="content">
+    <h1 style="left:35px;">Dernières entrées</h1>
 
 <div class="news-main">
 
@@ -9,7 +11,7 @@
              <aside class="{% if "Savoir" in post.category %}cat-knowledge{% endif %}{% if "News" in post.category %}cat-news{% endif %}"><h4>{{ post.category }}</h4><div class="card">
                     <div class="card-header"><h2 class="card-title">&nbsp;&nbsp;{{ post.title }}</h2></div>
                     <p class="card-text">&nbsp;&nbsp;{{post.content|slice:":200" }}</p>
-                    <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">&nbsp;&nbsp;Détail &rarr;</a><p class="card-date">&nbsp;&nbsp;{{ post.created_on }} </p>
+                    <a href="{% url 'website:post_detail' post.slug  %}" class="btn btn-primary">&nbsp;&nbsp;Détail &rarr;</a><p class="card-date">&nbsp;&nbsp;{{ post.created_on }} </p>
                </div></aside>
             {% endfor %}
 
@@ -27,5 +29,6 @@
 
 {% endif %}
 
+</div>
 </div>
 {%endblock%}

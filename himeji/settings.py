@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'website.apps.WebsiteConfig',
     'himeji',
+    'Forum',
 ]
 
 MIDDLEWARE = [

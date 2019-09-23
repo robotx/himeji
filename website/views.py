@@ -5,7 +5,7 @@ from django.core.mail import EmailMessage
 from django.shortcuts import redirect
 from django.template.loader import get_template
 
-from .forms import ContactForm # Add this
+from .forms import ContactForm
 
 
 class AllList(generic.ListView):
